@@ -12,7 +12,7 @@ namespace Controllib
     public class CustomTabControl : TabControl
     {
         private Container components = null;
-
+        
         public CustomTabControl()
         {
             InitializeComponent();
