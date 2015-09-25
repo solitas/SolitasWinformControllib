@@ -28,11 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.advencedLabel1 = new Controllib.AdvencedLabel();
             this.customTabControl1 = new Controllib.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.customTabControl1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // advencedLabel1
+            // 
+            this.advencedLabel1.BackColor = System.Drawing.Color.White;
+            this.advencedLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.advencedLabel1.Location = new System.Drawing.Point(397, 26);
+            this.advencedLabel1.Name = "advencedLabel1";
+            this.advencedLabel1.Size = new System.Drawing.Size(188, 104);
+            this.advencedLabel1.TabIndex = 1;
+            this.advencedLabel1.Text = "advencedLabel1";
             // 
             // customTabControl1
             // 
@@ -68,7 +79,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1073, 479);
+            this.Controls.Add(this.advencedLabel1);
             this.Controls.Add(this.customTabControl1);
             this.Name = "Form1";
             this.Text = " ControlTest";
@@ -82,6 +95,7 @@
         private Controllib.CustomTabControl customTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private Controllib.AdvencedLabel advencedLabel1;
     }
 }
 
