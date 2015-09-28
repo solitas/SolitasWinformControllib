@@ -370,5 +370,10 @@ namespace Controllib.utils
 
         [DllImport("user32.dll")]
         public static extern int SetWindowLong(IntPtr hWnd, uint nIndex, uint dwNewLong);
+
+        public static void Invalidate(IntPtr handle)
+        {
+            SendMessage(handle, Msgs.WM_PAINT, 0, 0);
+        }
     }
 }

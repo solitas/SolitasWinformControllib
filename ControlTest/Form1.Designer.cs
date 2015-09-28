@@ -38,12 +38,12 @@
             // advencedLabel1
             // 
             this.advencedLabel1.BackColor = System.Drawing.Color.White;
+            this.advencedLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.advencedLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.advencedLabel1.Location = new System.Drawing.Point(397, 26);
             this.advencedLabel1.Name = "advencedLabel1";
-            this.advencedLabel1.Size = new System.Drawing.Size(188, 104);
+            this.advencedLabel1.Size = new System.Drawing.Size(255, 43);
             this.advencedLabel1.TabIndex = 1;
-            this.advencedLabel1.Text = "advencedLabel1";
             // 
             // customTabControl1
             // 
