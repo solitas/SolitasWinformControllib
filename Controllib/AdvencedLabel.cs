@@ -1,4 +1,5 @@
 ﻿using Controllib.utils;
+using Controllib.Graphic;
 
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -47,7 +48,7 @@ namespace Controllib
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
-            SetStyle(ControlStyles.Opaque, true);
+            //SetStyle(ControlStyles.Opaque, true);
         }
 
         #region WndProc override methods
@@ -61,8 +62,21 @@ namespace Controllib
 
                     using (Graphics g = Graphics.FromHwnd(Handle))
                     {
-                        g.SmoothingMode = SmoothingMode.AntiAlias;
-                        drawString(g, Text);
+                        g.SmoothingMode = SmoothingMode.HighQuality;
+
+                        g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+                        StringFormat format = new StringFormat();
+
+                        //format.Alignment = StringAlignment.Center;
+
+                        // format.LineAlignment = StringAlignment.Center;
+
+                        Brush labelBrush = new SolidBrush(ForeColor);
+                        g.FillRectangle(Brushes.White, Bounds);
+                        g.DrawStringWithGraphicsPath(Text, labelBrush, Font, Bounds, format);
+
+                        format.Dispose();
                     }
 
                     break;
@@ -82,14 +96,17 @@ namespace Controllib
 
             Rectangle bounds = new Rectangle(0, 0, Width, Height);
             SizeF size = g.MeasureString(Text, Font);
+            float scaleFactorX = size.Width / Width;
 
             using (Brush backBrush = new SolidBrush(Parent.BackColor))
             using (Brush fontBrush = new SolidBrush(ForeColor))
             {
                 GraphicsPath fontPath = new GraphicsPath();
-                fontPath.AddString(Text, Font.FontFamily , (int)Font.Style, Height, new Point(0, 0), new StringFormat());
+                fontPath.AddString(Text, Font.FontFamily, (int)Font.Style, size.Height, new Point(0, 0), new StringFormat());
+
                 g.FillRectangle(backBrush, bounds);
                 g.FillPath(fontBrush, fontPath);
+                g.ScaleTransform(scaleFactorX, 1.0f);
                 fontPath.Dispose();
             }
         }

@@ -37,12 +37,12 @@
             // 
             // advencedLabel1
             // 
-            this.advencedLabel1.BackColor = System.Drawing.Color.White;
+            this.advencedLabel1.BackColor = System.Drawing.Color.LightGray;
             this.advencedLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.advencedLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.advencedLabel1.Location = new System.Drawing.Point(397, 26);
+            this.advencedLabel1.ForeColor = System.Drawing.Color.Black;
+            this.advencedLabel1.Location = new System.Drawing.Point(629, 112);
             this.advencedLabel1.Name = "advencedLabel1";
-            this.advencedLabel1.Size = new System.Drawing.Size(255, 43);
+            this.advencedLabel1.Size = new System.Drawing.Size(257, 112);
             this.advencedLabel1.TabIndex = 1;
             // 
             // customTabControl1
@@ -84,7 +84,7 @@
             this.Controls.Add(this.advencedLabel1);
             this.Controls.Add(this.customTabControl1);
             this.Name = "Form1";
-            this.Text = " ControlTest";
+            this.Text = "test";
             this.customTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
