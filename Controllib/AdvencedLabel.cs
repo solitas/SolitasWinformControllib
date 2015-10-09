@@ -48,7 +48,6 @@ namespace Controllib
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
-            //SetStyle(ControlStyles.Opaque, true);
         }
 
         #region WndProc override methods
@@ -58,6 +57,7 @@ namespace Controllib
             switch (m.Msg)
             {
                 case (int)Msgs.WM_PAINT:
+
                     base.WndProc(ref m);
 
                     using (Graphics g = Graphics.FromHwnd(Handle))
@@ -68,13 +68,12 @@ namespace Controllib
 
                         StringFormat format = new StringFormat();
 
-                        //format.Alignment = StringAlignment.Center;
-
+                        // format.Alignment = StringAlignment.Center;
                         // format.LineAlignment = StringAlignment.Center;
 
                         Brush labelBrush = new SolidBrush(ForeColor);
-                        g.FillRectangle(Brushes.White, Bounds);
-                        g.DrawStringWithGraphicsPath(Text, labelBrush, Font, Bounds, format);
+                        Rectangle rect = new Rectangle(0, 0, Bounds.Width, Bounds.Height);
+                        g.DrawStringWithGraphicsPath(Text, labelBrush, Font, rect, format);
 
                         format.Dispose();
                     }

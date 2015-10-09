@@ -76,7 +76,6 @@ namespace Controllib
             {
                 drawTabHeader(g, TabPages[index], index);
             }
-
         }
 
         private void drawTabHeader(Graphics g, TabPage page, int index)

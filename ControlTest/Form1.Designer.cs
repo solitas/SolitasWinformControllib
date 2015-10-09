@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.advencedLabel1 = new Controllib.AdvencedLabel();
+            this.designedPanel1 = new Controllib.DesignedPanel();
             this.customTabControl1 = new Controllib.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.customTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // advencedLabel1
+            // designedPanel1
             // 
-            this.advencedLabel1.BackColor = System.Drawing.Color.LightGray;
-            this.advencedLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.advencedLabel1.ForeColor = System.Drawing.Color.Black;
-            this.advencedLabel1.Location = new System.Drawing.Point(629, 112);
-            this.advencedLabel1.Name = "advencedLabel1";
-            this.advencedLabel1.Size = new System.Drawing.Size(257, 112);
-            this.advencedLabel1.TabIndex = 1;
+            this.designedPanel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.designedPanel1.Location = new System.Drawing.Point(408, 26);
+            this.designedPanel1.Name = "designedPanel1";
+            this.designedPanel1.Size = new System.Drawing.Size(613, 145);
+            this.designedPanel1.TabIndex = 2;
+            this.designedPanel1.Text = "Title";
             // 
             // customTabControl1
             // 
@@ -81,10 +80,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1073, 479);
-            this.Controls.Add(this.advencedLabel1);
+            this.Controls.Add(this.designedPanel1);
             this.Controls.Add(this.customTabControl1);
             this.Name = "Form1";
             this.Text = "test";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.customTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -95,7 +95,7 @@
         private Controllib.CustomTabControl customTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private Controllib.AdvencedLabel advencedLabel1;
+        private Controllib.DesignedPanel designedPanel1;
     }
 }
 

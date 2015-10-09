@@ -48,6 +48,9 @@
     <Compile Include="CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DesignedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Graphic\TextRender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils\User32.cs" />

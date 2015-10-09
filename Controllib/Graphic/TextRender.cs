@@ -17,31 +17,28 @@ namespace Controllib.Graphic
             var state = g.Save();
 
             GraphicsPath gPath = new GraphicsPath();
-
             SizeF stringSize = g.MeasureString(s, font);
-
-
             float emSize = font.SizeInPoints * 96.0f / 72.0f;
+            gPath.AddString(s, font.FontFamily, (int)font.Style, emSize, bounds, format);
 
-            gPath.AddString(s, font.FontFamily, (int)font.Style, emSize, new PointF(0, 0), format);
-
-            debugGraphics(s, stringSize, emSize, bounds);
 
             RectangleF pathRect = gPath.GetBounds();
 
-            float sx = pathRect.X;
-            float sy = pathRect.Y;
+            float ratio = Math.Min((bounds.Width / pathRect.Width), (bounds.Height / pathRect.Height));
 
-            float ratio = Math.Min((bounds.Width / pathRect.Width) * 0.8f, (bounds.Height / pathRect.Height) * 0.8f);
+            //g.TranslateTransform(-bounds.X, -bounds.Y);
 
-            using (Matrix matrix = new Matrix())
+            if (ratio > 1)
             {
-                matrix.Scale(ratio, 1);
-                g.TranslateTransform(-sx, -sy);
-                gPath.Transform(matrix);
-                matrix.Reset();
+                using (Matrix matrix = new Matrix())
+                {
+                    matrix.Scale(ratio, ratio);
+                    gPath.Transform(matrix);
+                    matrix.Translate(-pathRect.X, -pathRect.Y);
+                    matrix.Reset();
+                }
             }
-            
+            g.DrawRectangle(Pens.Black, bounds);
             g.FillPath(brush, gPath);
             g.Restore(state);
         }
