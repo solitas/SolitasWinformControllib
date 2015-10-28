@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.designedPanel1 = new Controllib.DesignedPanel();
+            this.advencedTextBox1 = new Controllib.AdvencedTextBox();
             this.SuspendLayout();
             // 
             // designedPanel1
@@ -37,16 +38,25 @@
             this.designedPanel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.designedPanel1.Location = new System.Drawing.Point(0, 0);
             this.designedPanel1.Name = "designedPanel1";
-            this.designedPanel1.Size = new System.Drawing.Size(447, 120);
+            this.designedPanel1.Size = new System.Drawing.Size(688, 120);
             this.designedPanel1.TabIndex = 2;
             this.designedPanel1.Text = "Title";
+            // 
+            // advencedTextBox1
+            // 
+            this.advencedTextBox1.Location = new System.Drawing.Point(38, 142);
+            this.advencedTextBox1.Name = "advencedTextBox1";
+            this.advencedTextBox1.Size = new System.Drawing.Size(600, 231);
+            this.advencedTextBox1.TabIndex = 3;
+            this.advencedTextBox1.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(447, 248);
+            this.ClientSize = new System.Drawing.Size(688, 406);
+            this.Controls.Add(this.advencedTextBox1);
             this.Controls.Add(this.designedPanel1);
             this.Name = "Form1";
             this.Text = "test";
@@ -57,6 +67,7 @@
 
         #endregion
         private Controllib.DesignedPanel designedPanel1;
+        private Controllib.AdvencedTextBox advencedTextBox1;
     }
 }
 
