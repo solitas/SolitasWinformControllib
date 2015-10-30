@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Utility
 {
@@ -34,7 +31,7 @@ namespace Utility
             return BitConverter.ToUInt16(bytes, 0);
         }
 
-        public static uint ToUInt32 (this byte[] bytes)
+        public static uint ToUInt32(this byte[] bytes)
         {
             if (BitConverter.IsLittleEndian)
             {
@@ -64,6 +61,7 @@ namespace Utility
             }
             return bytes;
         }
+
         /// <summary>
         /// 0x1234 => 1234
         /// </summary>
