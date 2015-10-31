@@ -33,9 +33,9 @@
             // 
             // designedPanel1
             // 
-            this.designedPanel1.BackColor = System.Drawing.Color.Gray;
+            this.designedPanel1.BackColor = System.Drawing.Color.Snow;
             this.designedPanel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.designedPanel1.Location = new System.Drawing.Point(12, 12);
+            this.designedPanel1.Location = new System.Drawing.Point(12, 27);
             this.designedPanel1.Name = "designedPanel1";
             this.designedPanel1.Size = new System.Drawing.Size(1020, 134);
             this.designedPanel1.TabIndex = 2;

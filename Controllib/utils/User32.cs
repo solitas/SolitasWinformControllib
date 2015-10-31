@@ -6,223 +6,223 @@ namespace Controllib.utils
 {
     public enum Styles : uint
     {
-        WS_OVERLAPPED = 0x00000000,
-        WS_POPUP = 0x80000000,
-        WS_CHILD = 0x40000000,
-        WS_MINIMIZE = 0x20000000,
-        WS_VISIBLE = 0x10000000,
-        WS_DISABLED = 0x08000000,
-        WS_CLIPSIBLINGS = 0x04000000,
-        WS_CLIPCHILDREN = 0x02000000,
-        WS_MAXIMIZE = 0x01000000,
-        WS_CAPTION = 0x00C00000,
-        WS_BORDER = 0x00800000,
-        WS_DLGFRAME = 0x00400000,
-        WS_VSCROLL = 0x00200000,
-        WS_HSCROLL = 0x00100000,
-        WS_SYSMENU = 0x00080000,
-        WS_THICKFRAME = 0x00040000,
-        WS_GROUP = 0x00020000,
-        WS_TABSTOP = 0x00010000,
-        GWL_STYLE = 0xFFFFFFF0,
+        WsOverlapped = 0x00000000,
+        WsPopup = 0x80000000,
+        WsChild = 0x40000000,
+        WsMinimize = 0x20000000,
+        WsVisible = 0x10000000,
+        WsDisabled = 0x08000000,
+        WsClipsiblings = 0x04000000,
+        WsClipchildren = 0x02000000,
+        WsMaximize = 0x01000000,
+        WsCaption = 0x00C00000,
+        WsBorder = 0x00800000,
+        WsDlgframe = 0x00400000,
+        WsVscroll = 0x00200000,
+        WsHscroll = 0x00100000,
+        WsSysmenu = 0x00080000,
+        WsThickframe = 0x00040000,
+        WsGroup = 0x00020000,
+        WsTabstop = 0x00010000,
+        GwlStyle = 0xFFFFFFF0,
     }
 
     public enum Msgs
     {
         // GetWindow
-        GW_HWNDFIRST = 0,
-        GW_HWNDLAST = 1,
-        GW_HWNDNEXT = 2,
-        GW_HWNDPREV = 3,
-        GW_OWNER = 4,
-        GW_CHILD = 5,
+        GwHwndfirst = 0,
+        GwHwndlast = 1,
+        GwHwndnext = 2,
+        GwHwndprev = 3,
+        GwOwner = 4,
+        GwChild = 5,
 
         // Window messages - WinUser.h
-        WM_NULL = 0x0000,
-        WM_CREATE = 0x0001,
-        WM_DESTROY = 0x0002,
-        WM_MOVE = 0x0003,
-        WM_SIZE = 0x0005,
-        WM_KILLFOCUS = 0x0008,
-        WM_SETREDRAW = 0x000B,
-        WM_GETTEXT = 0x000D,
-        WM_GETTEXTLENGTH = 0x000E,
-        WM_PAINT = 0x000F,
-        WM_ERASEBKGND = 0x0014,
-        WM_SHOWWINDOW = 0x0018,
+        WmNull = 0x0000,
+        WmCreate = 0x0001,
+        WmDestroy = 0x0002,
+        WmMove = 0x0003,
+        WmSize = 0x0005,
+        WmKillfocus = 0x0008,
+        WmSetredraw = 0x000B,
+        WmGettext = 0x000D,
+        WmGettextlength = 0x000E,
+        WmPaint = 0x000F,
+        WmErasebkgnd = 0x0014,
+        WmShowwindow = 0x0018,
 
-        WM_FONTCHANGE = 0x001d,
-        WM_SETCURSOR = 0x0020,
-        WM_MOUSEACTIVATE = 0x0021,
-        WM_CHILDACTIVATE = 0x0022,
+        WmFontchange = 0x001d,
+        WmSetcursor = 0x0020,
+        WmMouseactivate = 0x0021,
+        WmChildactivate = 0x0022,
 
-        WM_DRAWITEM = 0x002B,
-        WM_MEASUREITEM = 0x002C,
-        WM_DELETEITEM = 0x002D,
-        WM_VKEYTOITEM = 0x002E,
-        WM_CHARTOITEM = 0x002F,
+        WmDrawitem = 0x002B,
+        WmMeasureitem = 0x002C,
+        WmDeleteitem = 0x002D,
+        WmVkeytoitem = 0x002E,
+        WmChartoitem = 0x002F,
 
-        WM_SETFONT = 0x0030,
-        WM_COMPAREITEM = 0x0039,
-        WM_WINDOWPOSCHANGING = 0x0046,
-        WM_WINDOWPOSCHANGED = 0x0047,
-        WM_NOTIFY = 0x004E,
-        WM_NOTIFYFORMAT = 0x0055,
-        WM_STYLECHANGING = 0x007C,
-        WM_STYLECHANGED = 0x007D,
-        WM_NCMOUSEMOVE = 0x00A0,
-        WM_NCLBUTTONDOWN = 0x00A1,
+        WmSetfont = 0x0030,
+        WmCompareitem = 0x0039,
+        WmWindowposchanging = 0x0046,
+        WmWindowposchanged = 0x0047,
+        WmNotify = 0x004E,
+        WmNotifyformat = 0x0055,
+        WmStylechanging = 0x007C,
+        WmStylechanged = 0x007D,
+        WmNcmousemove = 0x00A0,
+        WmNclbuttondown = 0x00A1,
 
-        WM_NCCREATE = 0x0081,
-        WM_NCDESTROY = 0x0082,
-        WM_NCCALCSIZE = 0x0083,
-        WM_NCHITTEST = 0x0084,
-        WM_NCPAINT = 0x0085,
-        WM_GETDLGCODE = 0x0087,
+        WmNccreate = 0x0081,
+        WmNcdestroy = 0x0082,
+        WmNccalcsize = 0x0083,
+        WmNchittest = 0x0084,
+        WmNcpaint = 0x0085,
+        WmGetdlgcode = 0x0087,
 
         // from WinUser.h and RichEdit.h
-        EM_GETSEL = 0x00B0,
-        EM_SETSEL = 0x00B1,
-        EM_GETRECT = 0x00B2,
-        EM_SETRECT = 0x00B3,
-        EM_SETRECTNP = 0x00B4,
-        EM_SCROLL = 0x00B5,
-        EM_LINESCROLL = 0x00B6,
+        EmGetsel = 0x00B0,
+        EmSetsel = 0x00B1,
+        EmGetrect = 0x00B2,
+        EmSetrect = 0x00B3,
+        EmSetrectnp = 0x00B4,
+        EmScroll = 0x00B5,
+        EmLinescroll = 0x00B6,
         //EM_SCROLLCARET       = 0x00B7,
-        EM_GETMODIFY = 0x00B8,
-        EM_SETMODIFY = 0x00B9,
-        EM_GETLINECOUNT = 0x00BA,
-        EM_LINEINDEX = 0x00BB,
-        EM_SETHANDLE = 0x00BC,
-        EM_GETHANDLE = 0x00BD,
-        EM_GETTHUMB = 0x00BE,
-        EM_LINELENGTH = 0x00C1,
-        EM_LINEFROMCHAR = 0x00C9,
-        EM_GETFIRSTVISIBLELINE = 0x00CE,
-        EM_SETMARGINS = 0x00D3,
-        EM_GETMARGINS = 0x00D4,
-        EM_POSFROMCHAR = 0x00D6,
-        EM_CHARFROMPOS = 0x00D7,
+        EmGetmodify = 0x00B8,
+        EmSetmodify = 0x00B9,
+        EmGetlinecount = 0x00BA,
+        EmLineindex = 0x00BB,
+        EmSethandle = 0x00BC,
+        EmGethandle = 0x00BD,
+        EmGetthumb = 0x00BE,
+        EmLinelength = 0x00C1,
+        EmLinefromchar = 0x00C9,
+        EmGetfirstvisibleline = 0x00CE,
+        EmSetmargins = 0x00D3,
+        EmGetmargins = 0x00D4,
+        EmPosfromchar = 0x00D6,
+        EmCharfrompos = 0x00D7,
 
-        WM_KEYFIRST = 0x0100,
-        WM_KEYDOWN = 0x0100,
-        WM_KEYUP = 0x0101,
-        WM_CHAR = 0x0102,
-        WM_DEADCHAR = 0x0103,
-        WM_SYSKEYDOWN = 0x0104,
-        WM_SYSKEYUP = 0x0105,
-        WM_SYSCHAR = 0x0106,
-        WM_SYSDEADCHAR = 0x0107,
+        WmKeyfirst = 0x0100,
+        WmKeydown = 0x0100,
+        WmKeyup = 0x0101,
+        WmChar = 0x0102,
+        WmDeadchar = 0x0103,
+        WmSyskeydown = 0x0104,
+        WmSyskeyup = 0x0105,
+        WmSyschar = 0x0106,
+        WmSysdeadchar = 0x0107,
 
-        WM_COMMAND = 0x0111,
-        WM_SYSCOMMAND = 0x0112,
-        WM_TIMER = 0x0113,
-        WM_HSCROLL = 0x0114,
-        WM_VSCROLL = 0x0115,
-        WM_UPDATEUISTATE = 0x0128,
-        WM_QUERYUISTATE = 0x0129,
-        WM_MOUSEFIRST = 0x0200,
-        WM_MOUSEMOVE = 0x0200,
-        WM_LBUTTONDOWN = 0x0201,
-        WM_LBUTTONUP = 0x0202,
-        WM_PARENTNOTIFY = 0x0210,
+        WmCommand = 0x0111,
+        WmSyscommand = 0x0112,
+        WmTimer = 0x0113,
+        WmHscroll = 0x0114,
+        WmVscroll = 0x0115,
+        WmUpdateuistate = 0x0128,
+        WmQueryuistate = 0x0129,
+        WmMousefirst = 0x0200,
+        WmMousemove = 0x0200,
+        WmLbuttondown = 0x0201,
+        WmLbuttonup = 0x0202,
+        WmParentnotify = 0x0210,
 
-        WM_NEXTMENU = 0x0213,
-        WM_SIZING = 0x0214,
-        WM_CAPTURECHANGED = 0x0215,
-        WM_MOVING = 0x0216,
+        WmNextmenu = 0x0213,
+        WmSizing = 0x0214,
+        WmCapturechanged = 0x0215,
+        WmMoving = 0x0216,
 
-        WM_IME_SETCONTEXT = 0x0281,
-        WM_IME_NOTIFY = 0x0282,
-        WM_IME_CONTROL = 0x0283,
-        WM_IME_COMPOSITIONFULL = 0x0284,
-        WM_IME_SELECT = 0x0285,
-        WM_IME_CHAR = 0x0286,
-        WM_IME_REQUEST = 0x0288,
-        WM_IME_KEYDOWN = 0x0290,
-        WM_IME_KEYUP = 0x0291,
-        WM_NCMOUSEHOVER = 0x02A0,
-        WM_NCMOUSELEAVE = 0x02A2,
-        WM_MOUSEHOVER = 0x02A1,
-        WM_MOUSELEAVE = 0x02A3,
+        WmImeSetcontext = 0x0281,
+        WmImeNotify = 0x0282,
+        WmImeControl = 0x0283,
+        WmImeCompositionfull = 0x0284,
+        WmImeSelect = 0x0285,
+        WmImeChar = 0x0286,
+        WmImeRequest = 0x0288,
+        WmImeKeydown = 0x0290,
+        WmImeKeyup = 0x0291,
+        WmNcmousehover = 0x02A0,
+        WmNcmouseleave = 0x02A2,
+        WmMousehover = 0x02A1,
+        WmMouseleave = 0x02A3,
 
-        WM_CUT = 0x0300,
-        WM_COPY = 0x0301,
-        WM_PASTE = 0x0302,
-        WM_CLEAR = 0x0303,
-        WM_UNDO = 0x0304,
-        WM_RENDERFORMAT = 0x0305,
-        WM_RENDERALLFORMATS = 0x0306,
-        WM_DESTROYCLIPBOARD = 0x0307,
-        WM_DRAWCLIPBOARD = 0x0308,
-        WM_PAINTCLIPBOARD = 0x0309,
-        WM_VSCROLLCLIPBOARD = 0x030A,
-        WM_SIZECLIPBOARD = 0x030B,
-        WM_ASKCBFORMATNAME = 0x030C,
-        WM_CHANGECBCHAIN = 0x030D,
-        WM_HSCROLLCLIPBOARD = 0x030E,
-        WM_QUERYNEWPALETTE = 0x030F,
-        WM_PALETTEISCHANGING = 0x0310,
-        WM_PALETTECHANGED = 0x0311,
-        WM_HOTKEY = 0x0312,
+        WmCut = 0x0300,
+        WmCopy = 0x0301,
+        WmPaste = 0x0302,
+        WmClear = 0x0303,
+        WmUndo = 0x0304,
+        WmRenderformat = 0x0305,
+        WmRenderallformats = 0x0306,
+        WmDestroyclipboard = 0x0307,
+        WmDrawclipboard = 0x0308,
+        WmPaintclipboard = 0x0309,
+        WmVscrollclipboard = 0x030A,
+        WmSizeclipboard = 0x030B,
+        WmAskcbformatname = 0x030C,
+        WmChangecbchain = 0x030D,
+        WmHscrollclipboard = 0x030E,
+        WmQuerynewpalette = 0x030F,
+        WmPaletteischanging = 0x0310,
+        WmPalettechanged = 0x0311,
+        WmHotkey = 0x0312,
 
-        WM_USER = 0x0400,
-        EM_SCROLLCARET = (WM_USER + 49),
+        WmUser = 0x0400,
+        EmScrollcaret = (WmUser + 49),
 
-        EM_CANPASTE = (WM_USER + 50),
-        EM_DISPLAYBAND = (WM_USER + 51),
-        EM_EXGETSEL = (WM_USER + 52),
-        EM_EXLIMITTEXT = (WM_USER + 53),
-        EM_EXLINEFROMCHAR = (WM_USER + 54),
-        EM_EXSETSEL = (WM_USER + 55),
-        EM_FINDTEXT = (WM_USER + 56),
-        EM_FORMATRANGE = (WM_USER + 57),
-        EM_GETCHARFORMAT = (WM_USER + 58),
-        EM_GETEVENTMASK = (WM_USER + 59),
-        EM_GETOLEINTERFACE = (WM_USER + 60),
-        EM_GETPARAFORMAT = (WM_USER + 61),
-        EM_GETSELTEXT = (WM_USER + 62),
-        EM_HIDESELECTION = (WM_USER + 63),
-        EM_PASTESPECIAL = (WM_USER + 64),
-        EM_REQUESTRESIZE = (WM_USER + 65),
-        EM_SELECTIONTYPE = (WM_USER + 66),
-        EM_SETBKGNDCOLOR = (WM_USER + 67),
-        EM_SETCHARFORMAT = (WM_USER + 68),
-        EM_SETEVENTMASK = (WM_USER + 69),
-        EM_SETOLECALLBACK = (WM_USER + 70),
-        EM_SETPARAFORMAT = (WM_USER + 71),
-        EM_SETTARGETDEVICE = (WM_USER + 72),
-        EM_STREAMIN = (WM_USER + 73),
-        EM_STREAMOUT = (WM_USER + 74),
-        EM_GETTEXTRANGE = (WM_USER + 75),
-        EM_FINDWORDBREAK = (WM_USER + 76),
-        EM_SETOPTIONS = (WM_USER + 77),
-        EM_GETOPTIONS = (WM_USER + 78),
-        EM_FINDTEXTEX = (WM_USER + 79),
+        EmCanpaste = (WmUser + 50),
+        EmDisplayband = (WmUser + 51),
+        EmExgetsel = (WmUser + 52),
+        EmExlimittext = (WmUser + 53),
+        EmExlinefromchar = (WmUser + 54),
+        EmExsetsel = (WmUser + 55),
+        EmFindtext = (WmUser + 56),
+        EmFormatrange = (WmUser + 57),
+        EmGetcharformat = (WmUser + 58),
+        EmGeteventmask = (WmUser + 59),
+        EmGetoleinterface = (WmUser + 60),
+        EmGetparaformat = (WmUser + 61),
+        EmGetseltext = (WmUser + 62),
+        EmHideselection = (WmUser + 63),
+        EmPastespecial = (WmUser + 64),
+        EmRequestresize = (WmUser + 65),
+        EmSelectiontype = (WmUser + 66),
+        EmSetbkgndcolor = (WmUser + 67),
+        EmSetcharformat = (WmUser + 68),
+        EmSeteventmask = (WmUser + 69),
+        EmSetolecallback = (WmUser + 70),
+        EmSetparaformat = (WmUser + 71),
+        EmSettargetdevice = (WmUser + 72),
+        EmStreamin = (WmUser + 73),
+        EmStreamout = (WmUser + 74),
+        EmGettextrange = (WmUser + 75),
+        EmFindwordbreak = (WmUser + 76),
+        EmSetoptions = (WmUser + 77),
+        EmGetoptions = (WmUser + 78),
+        EmFindtextex = (WmUser + 79),
 
         // Tab Control Messages - CommCtrl.h
-        TCM_DELETEITEM = 0x1308,
-        TCM_INSERTITEM = 0x133E,
-        TCM_GETITEMRECT = 0x130A,
-        TCM_GETCURSEL = 0x130B,
-        TCM_SETCURSEL = 0x130C,
-        TCM_ADJUSTRECT = 0x1328,
-        TCM_SETITEMSIZE = 0x1329,
-        TCM_SETPADDING = 0x132B,
+        TcmDeleteitem = 0x1308,
+        TcmInsertitem = 0x133E,
+        TcmGetitemrect = 0x130A,
+        TcmGetcursel = 0x130B,
+        TcmSetcursel = 0x130C,
+        TcmAdjustrect = 0x1328,
+        TcmSetitemsize = 0x1329,
+        TcmSetpadding = 0x132B,
 
         // olectl.h
-        OCM__BASE = (WM_USER + 0x1c00),
-        OCM_COMMAND = (OCM__BASE + WM_COMMAND),
-        OCM_DRAWITEM = (OCM__BASE + WM_DRAWITEM),
-        OCM_MEASUREITEM = (OCM__BASE + WM_MEASUREITEM),
-        OCM_DELETEITEM = (OCM__BASE + WM_DELETEITEM),
-        OCM_VKEYTOITEM = (OCM__BASE + WM_VKEYTOITEM),
-        OCM_CHARTOITEM = (OCM__BASE + WM_CHARTOITEM),
-        OCM_COMPAREITEM = (OCM__BASE + WM_COMPAREITEM),
-        OCM_HSCROLL = (OCM__BASE + WM_HSCROLL),
-        OCM_VSCROLL = (OCM__BASE + WM_VSCROLL),
-        OCM_PARENTNOTIFY = (OCM__BASE + WM_PARENTNOTIFY),
-        OCM_NOTIFY = (OCM__BASE + WM_NOTIFY),
+        OcmBase = (WmUser + 0x1c00),
+        OcmCommand = (OcmBase + WmCommand),
+        OcmDrawitem = (OcmBase + WmDrawitem),
+        OcmMeasureitem = (OcmBase + WmMeasureitem),
+        OcmDeleteitem = (OcmBase + WmDeleteitem),
+        OcmVkeytoitem = (OcmBase + WmVkeytoitem),
+        OcmChartoitem = (OcmBase + WmChartoitem),
+        OcmCompareitem = (OcmBase + WmCompareitem),
+        OcmHscroll = (OcmBase + WmHscroll),
+        OcmVscroll = (OcmBase + WmVscroll),
+        OcmParentnotify = (OcmBase + WmParentnotify),
+        OcmNotify = (OcmBase + WmNotify),
 
     }
 
@@ -230,36 +230,36 @@ namespace Controllib.utils
     public enum Flags
     {
         // SetWindowPos Flags - WinUser.h
-        SWP_NOSIZE = 0x0001,
-        SWP_NOMOVE = 0x0002,
-        SWP_NOZORDER = 0x0004,
-        SWP_NOREDRAW = 0x0008,
-        SWP_NOACTIVATE = 0x0010,
-        SWP_FRAMECHANGED = 0x0020,
-        SWP_SHOWWINDOW = 0x0040,
-        SWP_HIDEWINDOW = 0x0080,
-        SWP_NOCOPYBITS = 0x0100,
-        SWP_NOOWNERZORDER = 0x0200,
-        SWP_NOSENDCHANGING = 0x0400,
+        SwpNosize = 0x0001,
+        SwpNomove = 0x0002,
+        SwpNozorder = 0x0004,
+        SwpNoredraw = 0x0008,
+        SwpNoactivate = 0x0010,
+        SwpFramechanged = 0x0020,
+        SwpShowwindow = 0x0040,
+        SwpHidewindow = 0x0080,
+        SwpNocopybits = 0x0100,
+        SwpNoownerzorder = 0x0200,
+        SwpNosendchanging = 0x0400,
     };
     
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct WINDOWPOS
+    public struct Windowpos
     {
         public IntPtr hwnd, hwndInsertAfter;
         public int x, y, cx, cy, flags;
     }
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-    public struct STYLESTRUCT
+    public struct Stylestruct
     {
         public int styleOld;
         public int styleNew;
     }
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-    public struct CREATESTRUCT
+    public struct Createstruct
     {
         public IntPtr lpCreateParams;
         public IntPtr hInstance;
@@ -276,7 +276,7 @@ namespace Controllib.utils
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct CHARFORMAT
+    public struct Charformat
     {
         public int cbSize;
         public UInt32 dwMask;
@@ -291,7 +291,7 @@ namespace Controllib.utils
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct POINTL
+    public struct Pointl
     {
         public Int32 X;
         public Int32 Y;
@@ -299,20 +299,20 @@ namespace Controllib.utils
 
     public static class User32
     {
-        public const int SCF_SELECTION = 0x0001;
+        public const int ScfSelection = 0x0001;
 
         /* Edit control EM_SETMARGIN parameters */
-        public const int EC_LEFTMARGIN = 0x0001;
-        public const int EC_RIGHTMARGIN = 0x0002;
+        public const int EcLeftmargin = 0x0001;
+        public const int EcRightmargin = 0x0002;
 
-        private static Type tmsgs = typeof(Msgs);
+        private static Type _tmsgs = typeof(Msgs);
 
         public static string Mnemonic(int z)
         {
-            foreach (int ix in Enum.GetValues(tmsgs))
+            foreach (int ix in Enum.GetValues(_tmsgs))
             {
                 if (z == ix)
-                    return Enum.GetName(tmsgs, ix);
+                    return Enum.GetName(_tmsgs, ix);
             }
 
             return z.ToString("X4");
@@ -320,12 +320,12 @@ namespace Controllib.utils
 
         public static void BeginUpdate(IntPtr hWnd)
         {
-            SendMessage(hWnd, (int)Msgs.WM_SETREDRAW, 0, IntPtr.Zero);
+            SendMessage(hWnd, (int)Msgs.WmSetredraw, 0, IntPtr.Zero);
         }
 
         public static void EndUpdate(IntPtr hWnd)
         {
-            SendMessage(hWnd, (int)Msgs.WM_SETREDRAW, 1, IntPtr.Zero);
+            SendMessage(hWnd, (int)Msgs.WmSetredraw, 1, IntPtr.Zero);
         }
 
         [DllImport("user32.dll", EntryPoint = "SendMessage", CharSet = CharSet.Auto)]
@@ -363,7 +363,7 @@ namespace Controllib.utils
         [DllImport("user32.dll")]
         //[return: MarshalAs(UnmanagedType.Bool)]
         public static extern int SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter,
-                                              int X, int Y, int cx, int cy, uint uFlags);
+                                              int x, int y, int cx, int cy, uint uFlags);
 
         [DllImport("user32.dll", SetLastError = true)]
         public static extern uint GetWindowLong(IntPtr hWnd, uint nIndex);
@@ -371,9 +371,11 @@ namespace Controllib.utils
         [DllImport("user32.dll")]
         public static extern int SetWindowLong(IntPtr hWnd, uint nIndex, uint dwNewLong);
 
+        
+
         public static void Invalidate(IntPtr handle)
         {
-            SendMessage(handle, Msgs.WM_PAINT, 0, 0);
+            SendMessage(handle, Msgs.WmPaint, 0, 0);
         }
     }
 }

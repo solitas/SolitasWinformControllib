@@ -14,7 +14,7 @@ namespace Controllib
 
         public AdvencedLabel() : base()
         {
-            setStyles();
+            SetStyles();
             Text = "advencedLabel";
             Font = new Font("Consolas", 9.75f, FontStyle.Regular);
         }
@@ -43,7 +43,7 @@ namespace Controllib
             }
         }
 
-        private void setStyles()
+        private void SetStyles()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -56,7 +56,7 @@ namespace Controllib
         {
             switch (m.Msg)
             {
-                case (int)Msgs.WM_PAINT:
+                case (int)Msgs.WmPaint:
 
                     base.WndProc(ref m);
 
@@ -88,7 +88,7 @@ namespace Controllib
 
         #endregion WndProc override methods
 
-        private void drawString(Graphics g, string text)
+        private void DrawString(Graphics g, string text)
         {
             if (Height <= 0 || Width <= 0)
                 return;

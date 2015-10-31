@@ -10,17 +10,17 @@ namespace Controllib.Graphic
 {
     public static class ShapeRender
     {
-        public static void DrawRoundRect(this Graphics g, Pen pen, float X, float Y, float width, float height, float radius)
+        public static void DrawRoundRect(this Graphics g, Pen pen, float x, float y, float width, float height, float radius)
         {
-            GraphicsPath gp = GetRoundRect(X, Y, width, height, radius);
+            GraphicsPath gp = GetRoundRect(x, y, width, height, radius);
             gp.CloseFigure();
             g.DrawPath(pen, gp);
             gp.Dispose();
         }
 
-        public static void FillRoundRect(this Graphics g, Brush brush, float X, float Y, float width, float height, float radius)
+        public static void FillRoundRect(this Graphics g, Brush brush, float x, float y, float width, float height, float radius)
         {
-            GraphicsPath gp = GetRoundRect(X, Y, width, height, radius);
+            GraphicsPath gp = GetRoundRect(x, y, width, height, radius);
             gp.CloseFigure();
             g.FillPath(brush, gp);
             gp.Dispose();

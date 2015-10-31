@@ -1,58 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-
+using System.Windows.Forms;
 using Controllib.Graphic;
+using Controllib.utils;
+
 namespace Controllib
 {
     public class DesignedPanel : Panel
     {
-        protected readonly int WS_EX_TRANSPARENT = 0x00000020;
-        protected readonly int WS_EX_COMPOSITED = 0x02000000;
-        public DesignedPanel()
-        {
-            //SetStyle( ControlStyles.OptimizedDoubleBuffer, true);
-            this.DoubleBuffered = true;
-        }
+        private const int WS_EX_TRANSPARENT = 0x00000020;
 
         protected override CreateParams CreateParams
         {
             get
             {
-                CreateParams createParams = base.CreateParams;
-                //createParams.ExStyle |= WS_EX_COMPOSITED;
+                var createParams = base.CreateParams;
                 createParams.ExStyle |= WS_EX_TRANSPARENT; // WS_EX_TRANSPARENT
-                
+
                 return createParams;
+            }
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == (int)Msgs.WmPaint)
+            {
+                using (var graphics = CreateGraphics())
+                {
+                    base.WndProc(ref m);
+                    RenderBackGraphics(graphics);
+                }
+            }
+            else
+            {
+                base.WndProc(ref m);
             }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-           
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        #region rendering methods
+        private void RenderBackGraphics(Graphics g)
         {
-            e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+            g.SmoothingMode = SmoothingMode.HighQuality;
+            var backColor = Color.FromArgb(100, BackColor.R, BackColor.G, BackColor.B);
 
-            Color backColor = Color.FromArgb(100, BackColor.R, BackColor.G, BackColor.B);
-            Color shadowColor = Color.FromArgb(255, Color.Black);
-            Rectangle rect = new Rectangle(0, 0, Width, Height);
+            var rect = new Rectangle(0, 0, Width, Height);
 
             using (Brush brush = new SolidBrush(backColor))
-            using (Brush shadowBrush = new SolidBrush(shadowColor))
-            using (Pen pen = new Pen(Color.Black, 1.0f))
             {
-                e.Graphics.FillRoundRect(brush, rect.X, rect.Y, rect.Width, rect.Height, 10.0f);
+                g.FillRoundRect(brush, rect.X, rect.Y, rect.Width, rect.Height, 10.0f);
             }
-
-            base.OnPaint(e);
         }
+        #endregion
     }
 }

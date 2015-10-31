@@ -11,7 +11,7 @@ namespace Controllib
 {
     public class CustomTabControl : TabControl
     {
-        private Container components = null;
+        private Container _components = null;
         
         public CustomTabControl()
         {
@@ -25,16 +25,16 @@ namespace Controllib
 
         private void InitializeComponent()
         {
-            components = new Container();
+            _components = new Container();
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                if (components != null)
+                if (_components != null)
                 {
-                    components.Dispose();
+                    _components.Dispose();
                 }
             }
 
@@ -45,10 +45,10 @@ namespace Controllib
         {
             base.OnPaint(e);
 
-            drawControl(e.Graphics);
+            DrawControl(e.Graphics);
         }
 
-        private void drawControl(Graphics g)
+        private void DrawControl(Graphics g)
         {
             if (!Visible)
                 return;
@@ -74,11 +74,11 @@ namespace Controllib
 
             for( int index = 0; index < TabPages.Count; index++)
             {
-                drawTabHeader(g, TabPages[index], index);
+                DrawTabHeader(g, TabPages[index], index);
             }
         }
 
-        private void drawTabHeader(Graphics g, TabPage page, int index)
+        private void DrawTabHeader(Graphics g, TabPage page, int index)
         {
             int selectedIndex = SelectedIndex;
             Rectangle tabHeaderRect = GetTabRect(index);
