@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controllib.Controls;
 
 namespace ControlTest
 {
@@ -19,7 +20,9 @@ namespace ControlTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            UserTabRenderer renderer = new FlatTabRenderer();
+            userTabControl1.TabRenderer = renderer;
+            
         }
     }
 }

@@ -26,6 +26,20 @@ namespace Controllib.Graphic
             gp.Dispose();
         }
 
+        public static GraphicsPath GetTopRoundRect(float x, float y, float width, float height, float radius)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            //Upper-right arc:
+            gp.AddArc(x + width - (radius * 2), y, radius * 2, radius * 2, 270, 90);
+            ////Lower-right arc:
+            gp.AddArc(x + width - (1 * 2), y + height - (1 * 2), 1 * 2, 1 * 2, 0, 90);
+            ////Lower-left arc:
+            gp.AddArc(x, y + height - (1 * 2), 1 * 2, 1 * 2, 90, 90);
+            //Upper-left arc:
+            gp.AddArc(x, y, radius * 2, radius * 2, 180, 90);
+            return gp;
+        }
+
         private static GraphicsPath GetRoundRect(float x, float y, float width, float height, float radius)
         {
             GraphicsPath gp = new GraphicsPath();
@@ -40,5 +54,7 @@ namespace Controllib.Graphic
 
             return gp;
         }
+
+
     }
 }
