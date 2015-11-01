@@ -26,23 +26,23 @@ namespace Controllib.Controls
         {
             RectangleF headerRect = new RectangleF(0, 0, tabSize.Width, tabSize.Height);
 
-            if (active)
+            using (var path = ShapeRender.GetTopRoundRect(0, 0, tabSize.Width, tabSize.Height, 3f))
             {
-                using (Brush brush = new SolidBrush(foreColor))
-                using (Pen pen = new Pen(borderColor))
+                if (active)
                 {
-                    using (var path = ShapeRender.GetTopRoundRect(0, 0, tabSize.Width, tabSize.Height, 5f))
+                    using (Brush brush = new SolidBrush(foreColor))
+                    using (Pen pen = new Pen(shadowColor))
                     {
                         graphics.FillPath(brush, path);
-                        graphics.DrawPath(pen, path);
                     }
                 }
-            }
-            else
-            {
-                using (Brush brush = new SolidBrush(backColor))
+                else
                 {
-                    //graphics.FillRectangle(brush, new RectangleF(0, 0, tabSize.Width, tabSize.Height));
+                    using (Brush brush = new SolidBrush(highlightColor))
+                    using (Pen pen = new Pen(shadowColor))
+                    {
+                        graphics.FillPath(brush, path);
+                    }
                 }
             }
         }

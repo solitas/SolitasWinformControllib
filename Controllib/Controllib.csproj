@@ -54,6 +54,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\TabChangingEventArgs.cs" />
+    <Compile Include="Controls\UserMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UserMenuStrip.Designer.cs">
+      <DependentUpon>UserMenuStrip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UserTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -77,10 +83,20 @@
     <Compile Include="Graphic\ShapeRender.cs" />
     <Compile Include="Graphic\TextRender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="utils\GDI32.cs" />
     <Compile Include="utils\User32.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

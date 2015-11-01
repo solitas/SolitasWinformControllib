@@ -223,7 +223,7 @@ namespace Controllib.Controls
                 CalculateLastVisibleTabIndex();
                 PerformLayout();
                 InU();
-                OnMarginChanged(new EventArgs());
+                OnTabMarginChanged(new EventArgs());
             }
         }
 
@@ -621,7 +621,7 @@ namespace Controllib.Controls
         /// <summary>
         /// Occurs after the margin for the control has changed.
         /// </summary>
-        public event EventHandler MarginChanged;
+        public event EventHandler TabMarginChanged;
 
         /// <summary>
         /// Occurs after the <see cref="TabDock"/> property
@@ -704,16 +704,16 @@ namespace Controllib.Controls
         }
 
         /// <summary>
-        /// Fires the <see cref="MarginChanged"/> event.
+        /// Fires the <see cref="TabMarginChanged"/> event.
         /// </summary>
         /// <param name="ea">
         /// Some <see cref="EventArgs"/>.
         /// </param>
-        protected virtual void OnMarginChanged(EventArgs ea)
+        protected virtual void OnTabMarginChanged(EventArgs ea)
         {
-            if (MarginChanged != null)
+            if (TabMarginChanged != null)
             {
-                MarginChanged(this, ea);
+                TabMarginChanged(this, ea);
             }
         }
 
