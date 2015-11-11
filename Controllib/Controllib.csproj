@@ -54,6 +54,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\TabChangingEventArgs.cs" />
+    <Compile Include="Controls\TitleBarControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\UserMenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -92,6 +95,7 @@
     <Compile Include="utils\User32.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

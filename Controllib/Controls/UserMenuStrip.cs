@@ -14,7 +14,7 @@ namespace Controllib.Controls
 
             RenderMode = ToolStripRenderMode.Professional;
             Renderer = new ToolStripProfessionalRenderer(new CustomMenuStripColorTable());
-            
+
         }
 
         #endregion Constructor

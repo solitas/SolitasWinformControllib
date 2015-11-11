@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.titleBarControl1 = new Controllib.Controls.TitleBarControl();
             this.userTabControl1 = new Controllib.Controls.UserTabControl();
             this.tabPage = new Controllib.Controls.UserTabPage();
             this.tabPage1 = new Controllib.Controls.UserTabPage();
@@ -36,15 +39,35 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTabControl1.SuspendLayout();
             this.userMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataModelBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(3, 77);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(246, 126);
+            this.treeView1.TabIndex = 5;
+            // 
+            // titleBarControl1
+            // 
+            this.titleBarControl1.BackColor = System.Drawing.Color.White;
+            this.titleBarControl1.BackgroundColor = System.Drawing.Color.Gray;
+            this.titleBarControl1.Font = new System.Drawing.Font("Bitstream Vera Sans Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleBarControl1.Location = new System.Drawing.Point(3, 30);
+            this.titleBarControl1.Name = "titleBarControl1";
+            this.titleBarControl1.Size = new System.Drawing.Size(246, 41);
+            this.titleBarControl1.TabIndex = 4;
+            this.titleBarControl1.Text = "Project";
             // 
             // userTabControl1
             // 
             this.userTabControl1.ActiveColor = System.Drawing.Color.White;
             this.userTabControl1.BackColor = System.Drawing.Color.White;
-            this.userTabControl1.BorderColor = System.Drawing.Color.Transparent;
+            this.userTabControl1.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.userTabControl1.Controls.Add(this.tabPage);
             this.userTabControl1.Controls.Add(this.tabPage1);
             this.userTabControl1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -52,7 +75,7 @@
             this.userTabControl1.ForeColor = System.Drawing.Color.DimGray;
             this.userTabControl1.ImageIndex = -1;
             this.userTabControl1.ImageList = null;
-            this.userTabControl1.InactiveColor = System.Drawing.Color.WhiteSmoke;
+            this.userTabControl1.InactiveColor = System.Drawing.Color.Gray;
             this.userTabControl1.Location = new System.Drawing.Point(762, 27);
             this.userTabControl1.Name = "userTabControl1";
             this.userTabControl1.OverIndex = -1;
@@ -75,7 +98,7 @@
             this.tabPage.ImageIndex = 0;
             this.tabPage.Location = new System.Drawing.Point(4, 33);
             this.tabPage.Name = "tabPage";
-            this.tabPage.Size = new System.Drawing.Size(271, 505);
+            this.tabPage.Size = new System.Drawing.Size(271, 509);
             this.tabPage.TabIndex = 0;
             this.tabPage.Text = "데이터";
             // 
@@ -91,6 +114,7 @@
             // 
             // userMenuStrip1
             // 
+            this.userMenuStrip1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.userMenuStrip1.ImageMarginGradientBegin = System.Drawing.Color.DimGray;
             this.userMenuStrip1.ImageMarginGradientEnd = System.Drawing.Color.WhiteSmoke;
             this.userMenuStrip1.ImageMarginGradientMiddle = System.Drawing.Color.WhiteSmoke;
@@ -125,30 +149,37 @@
             // newFileToolStripMenuItem
             // 
             this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
-            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.newFileToolStripMenuItem.Text = "&New File";
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.openFileToolStripMenuItem.Text = "&Open File";
+            // 
+            // dataModelBindingSource
+            // 
+            this.dataModelBindingSource.DataSource = typeof(ControlTest.DataModel);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1044, 576);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.titleBarControl1);
             this.Controls.Add(this.userTabControl1);
             this.Controls.Add(this.userMenuStrip1);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Text = "test";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.userTabControl1.ResumeLayout(false);
             this.userMenuStrip1.ResumeLayout(false);
             this.userMenuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,6 +194,9 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.BindingSource dataModelBindingSource;
+        private Controllib.Controls.TitleBarControl titleBarControl1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 

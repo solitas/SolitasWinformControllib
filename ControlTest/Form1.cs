@@ -22,7 +22,6 @@ namespace ControlTest
         {
             UserTabRenderer renderer = new FlatTabRenderer();
             userTabControl1.TabRenderer = renderer;
-            
         }
     }
 }

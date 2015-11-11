@@ -26,8 +26,8 @@ namespace Controllib.Graphic
 
             float ratio = Math.Max((pathRect.Width / bounds.Width), (pathRect.Height / bounds.Height));
 
-            g.DrawRectangle(Pens.Black, bounds);
-            //g.TranslateTransform(-bounds.X, -bounds.Y);
+            //g.DrawRectangle(Pens.Black, bounds);
+            g.TranslateTransform(-bounds.X, -bounds.Y);
             g.ScaleTransform(ratio + 1, ratio + 1);
             
             g.FillPath(brush, gPath);

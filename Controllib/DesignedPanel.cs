@@ -42,9 +42,11 @@ namespace Controllib
         }
 
         #region rendering methods
+
         private void RenderBackGraphics(Graphics g)
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
+
             var backColor = Color.FromArgb(100, BackColor.R, BackColor.G, BackColor.B);
 
             var rect = new Rectangle(0, 0, Width, Height);
@@ -54,6 +56,7 @@ namespace Controllib
                 g.FillRoundRect(brush, rect.X, rect.Y, rect.Width, rect.Height, 10.0f);
             }
         }
+
         #endregion
     }
 }

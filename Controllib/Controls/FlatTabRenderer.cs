@@ -38,7 +38,7 @@ namespace Controllib.Controls
                 }
                 else
                 {
-                    using (Brush brush = new SolidBrush(highlightColor))
+                    using (Brush brush = new SolidBrush(backColor))
                     using (Pen pen = new Pen(shadowColor))
                     {
                         graphics.FillPath(brush, path);

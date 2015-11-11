@@ -14,388 +14,311 @@ namespace Controllib.Properties {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color MenuStripGradientBegin
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuStripGradientBegin {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuStripGradientBegin"]));
             }
-            set
-            {
+            set {
                 this["MenuStripGradientBegin"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("DimGray")]
-        public global::System.Drawing.Color MenuStripGradientEnd
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuStripGradientEnd {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuStripGradientEnd"]));
             }
-            set
-            {
+            set {
                 this["MenuStripGradientEnd"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
-        public global::System.Drawing.Color MenuStripForeColor
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuStripForeColor {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuStripForeColor"]));
             }
-            set
-            {
+            set {
                 this["MenuStripForeColor"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Maroon")]
-        public global::System.Drawing.Color MenuItemPressedGradientBegin
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuItemPressedGradientBegin {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuItemPressedGradientBegin"]));
             }
-            set
-            {
+            set {
                 this["MenuItemPressedGradientBegin"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Maroon")]
-        public global::System.Drawing.Color MenuItemPressedGradientMiddle
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuItemPressedGradientMiddle {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuItemPressedGradientMiddle"]));
             }
-            set
-            {
+            set {
                 this["MenuItemPressedGradientMiddle"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
-        public global::System.Drawing.Color MenuItemPressedGradientEnd
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuItemPressedGradientEnd {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuItemPressedGradientEnd"]));
             }
-            set
-            {
+            set {
                 this["MenuItemPressedGradientEnd"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color MenuItemSelectedGradientBegin
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuItemSelectedGradientBegin {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuItemSelectedGradientBegin"]));
             }
-            set
-            {
+            set {
                 this["MenuItemSelectedGradientBegin"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color MenuItemSelectedGradientEnd
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuItemSelectedGradientEnd {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuItemSelectedGradientEnd"]));
             }
-            set
-            {
+            set {
                 this["MenuItemSelectedGradientEnd"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color MenuItemSelected
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuItemSelected {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuItemSelected"]));
             }
-            set
-            {
+            set {
                 this["MenuItemSelected"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Maroon")]
-        public global::System.Drawing.Color ImageMarginGradientBegin
-        {
-            get
-            {
+        public global::System.Drawing.Color ImageMarginGradientBegin {
+            get {
                 return ((global::System.Drawing.Color)(this["ImageMarginGradientBegin"]));
             }
-            set
-            {
+            set {
                 this["ImageMarginGradientBegin"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
-        public global::System.Drawing.Color ImageMarginGradientMiddle
-        {
-            get
-            {
+        public global::System.Drawing.Color ImageMarginGradientMiddle {
+            get {
                 return ((global::System.Drawing.Color)(this["ImageMarginGradientMiddle"]));
             }
-            set
-            {
+            set {
                 this["ImageMarginGradientMiddle"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
-        public global::System.Drawing.Color ImageMarginGradientEnd
-        {
-            get
-            {
+        public global::System.Drawing.Color ImageMarginGradientEnd {
+            get {
                 return ((global::System.Drawing.Color)(this["ImageMarginGradientEnd"]));
             }
-            set
-            {
+            set {
                 this["ImageMarginGradientEnd"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color MenuBorder
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuBorder {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuBorder"]));
             }
-            set
-            {
+            set {
                 this["MenuBorder"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color MenuItemBorder
-        {
-            get
-            {
+        public global::System.Drawing.Color MenuItemBorder {
+            get {
                 return ((global::System.Drawing.Color)(this["MenuItemBorder"]));
             }
-            set
-            {
+            set {
                 this["MenuItemBorder"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color ToolStripBorder
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripBorder {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripBorder"]));
             }
-            set
-            {
+            set {
                 this["ToolStripBorder"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
-        public global::System.Drawing.Color ToolStripContentPanelGradientBegin
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripContentPanelGradientBegin {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripContentPanelGradientBegin"]));
             }
-            set
-            {
+            set {
                 this["ToolStripContentPanelGradientBegin"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("LightGray")]
-        public global::System.Drawing.Color ToolStripContentPanelGradientEnd
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripContentPanelGradientEnd {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripContentPanelGradientEnd"]));
             }
-            set
-            {
+            set {
                 this["ToolStripContentPanelGradientEnd"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("LightGray")]
-        public global::System.Drawing.Color ToolStripDropDownBackground
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripDropDownBackground {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripDropDownBackground"]));
             }
-            set
-            {
+            set {
                 this["ToolStripDropDownBackground"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
-        public global::System.Drawing.Color ToolStripGradientBegin
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripGradientBegin {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripGradientBegin"]));
             }
-            set
-            {
+            set {
                 this["ToolStripGradientBegin"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("LightGray")]
-        public global::System.Drawing.Color ToolStripGradientMiddle
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripGradientMiddle {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripGradientMiddle"]));
             }
-            set
-            {
+            set {
                 this["ToolStripGradientMiddle"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color ToolStripGradientEnd
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripGradientEnd {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripGradientEnd"]));
             }
-            set
-            {
+            set {
                 this["ToolStripGradientEnd"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color StatusStripGradientBegin
-        {
-            get
-            {
+        public global::System.Drawing.Color StatusStripGradientBegin {
+            get {
                 return ((global::System.Drawing.Color)(this["StatusStripGradientBegin"]));
             }
-            set
-            {
+            set {
                 this["StatusStripGradientBegin"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("DimGray")]
-        public global::System.Drawing.Color StatusStripGradientEnd
-        {
-            get
-            {
+        public global::System.Drawing.Color StatusStripGradientEnd {
+            get {
                 return ((global::System.Drawing.Color)(this["StatusStripGradientEnd"]));
             }
-            set
-            {
+            set {
                 this["StatusStripGradientEnd"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color ToolStripForeColor
-        {
-            get
-            {
+        public global::System.Drawing.Color ToolStripForeColor {
+            get {
                 return ((global::System.Drawing.Color)(this["ToolStripForeColor"]));
             }
-            set
-            {
+            set {
                 this["ToolStripForeColor"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("WhiteSmoke")]
-        public global::System.Drawing.Color StatusStripForeColor
-        {
-            get
-            {
+        public global::System.Drawing.Color StatusStripForeColor {
+            get {
                 return ((global::System.Drawing.Color)(this["StatusStripForeColor"]));
             }
-            set
-            {
+            set {
                 this["StatusStripForeColor"] = value;
             }
         }
