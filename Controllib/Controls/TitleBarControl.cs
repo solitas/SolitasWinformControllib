@@ -88,13 +88,26 @@ namespace Controllib.Controls
             {
                 return;
             }
+            float rectHeight = 30.0f;
+            float rectWidth = 100.0f;
 
-            Rectangle titleRect = new Rectangle((int)(Width * 0.01), (int)(Height * 0.2), (int)(Width * 0.3), (int)(Height * 0.5));
+            if (rectWidth > Width)
+            {
+                rectWidth = Width * 0.4f;
+            }
+
+            if (rectHeight > Height)
+            {
+                rectHeight = Height * 0.5f;
+            }
+
+            Rectangle titleRect = new Rectangle((int)(Width * 0.01), (int)(Height * 0.2), (int)rectWidth, (int)rectHeight);
+
             Color fontColor = ControlPaint.LightLight(BackgroundColor);
+
             using (Brush brush = new SolidBrush(fontColor))
             {
-                g.DrawStringWithGraphicsPath(Text, brush, Font, titleRect, StringFormat.GenericDefault);
-                //g.DrawString(Text, Font, brush, titleRect);
+                g.DrawStringWithGraphicsPath(Text, Font, brush, titleRect, StringFormat.GenericDefault);
             }
         }
     }

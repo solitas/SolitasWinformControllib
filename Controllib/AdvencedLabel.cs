@@ -73,7 +73,7 @@ namespace Controllib
 
                         Brush labelBrush = new SolidBrush(ForeColor);
                         Rectangle rect = new Rectangle(0, 0, Bounds.Width, Bounds.Height);
-                        g.DrawStringWithGraphicsPath(Text, labelBrush, Font, rect, format);
+                        g.DrawStringWithGraphicsPath(Text, Font, labelBrush, rect, format);
 
                         format.Dispose();
                     }

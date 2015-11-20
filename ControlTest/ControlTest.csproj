@@ -88,6 +88,10 @@
       <Project>{b9413547-b217-4cc1-90fe-51b5820df77f}</Project>
       <Name>Controllib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Win32UnmanagedLib\Win32UnmanagedLib.vcxproj">
+      <Project>{d756774f-8683-44f8-93ce-39f65859ce02}</Project>
+      <Name>Win32UnmanagedLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

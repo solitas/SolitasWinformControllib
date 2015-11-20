@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.titleBarControl1 = new Controllib.Controls.TitleBarControl();
             this.userTabControl1 = new Controllib.Controls.UserTabControl();
             this.tabPage = new Controllib.Controls.UserTabPage();
@@ -45,21 +44,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(3, 77);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(246, 126);
-            this.treeView1.TabIndex = 5;
-            // 
             // titleBarControl1
             // 
             this.titleBarControl1.BackColor = System.Drawing.Color.White;
-            this.titleBarControl1.BackgroundColor = System.Drawing.Color.Gray;
-            this.titleBarControl1.Font = new System.Drawing.Font("Bitstream Vera Sans Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleBarControl1.Location = new System.Drawing.Point(3, 30);
+            this.titleBarControl1.BackgroundColor = System.Drawing.Color.DimGray;
+            this.titleBarControl1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleBarControl1.Location = new System.Drawing.Point(6, 30);
             this.titleBarControl1.Name = "titleBarControl1";
-            this.titleBarControl1.Size = new System.Drawing.Size(246, 41);
+            this.titleBarControl1.Size = new System.Drawing.Size(181, 27);
             this.titleBarControl1.TabIndex = 4;
             this.titleBarControl1.Text = "Project";
             // 
@@ -126,7 +118,7 @@
             this.userMenuStrip1.MenuItemPressedGradientBegin = System.Drawing.Color.DimGray;
             this.userMenuStrip1.MenuItemPressedGradientEnd = System.Drawing.Color.DimGray;
             this.userMenuStrip1.MenuItemPressedGradientMiddle = System.Drawing.Color.DimGray;
-            this.userMenuStrip1.MenuItemSelected = System.Drawing.Color.IndianRed;
+            this.userMenuStrip1.MenuItemSelected = System.Drawing.Color.WhiteSmoke;
             this.userMenuStrip1.MenuItemSelectedGradientBegin = System.Drawing.Color.Black;
             this.userMenuStrip1.MenuItemSelectedGradientEnd = System.Drawing.Color.Black;
             this.userMenuStrip1.MenuStripForeColor = System.Drawing.Color.WhiteSmoke;
@@ -168,7 +160,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1044, 576);
-            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.titleBarControl1);
             this.Controls.Add(this.userTabControl1);
             this.Controls.Add(this.userMenuStrip1);
@@ -196,7 +187,6 @@
         private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
         private System.Windows.Forms.BindingSource dataModelBindingSource;
         private Controllib.Controls.TitleBarControl titleBarControl1;
-        private System.Windows.Forms.TreeView treeView1;
     }
 }
 

@@ -10,28 +10,62 @@ namespace Controllib.Graphic
 {
     public static class TextRender
     {
-        public static void DrawStringWithGraphicsPath(this Graphics g, string s, Brush brush, Font font, Rectangle bounds, StringFormat format)
+        public static void DrawString(this Graphics g, string text, Font font, Brush brush, RectangleF rect, StringFormat format, bool allowNarrowSetWidth)
         {
-            if (bounds.Width == 0 || bounds.Height == 0)
-                return;
+            SizeF sz2 = g.MeasureString(text, font);
+            float width = sz2.Width;
 
+            // 글자 장평을 줄이는 방법
+            if (width > rect.Width && allowNarrowSetWidth)
+            {
+                float mag = rect.Width / width;
+
+                g.TranslateTransform(rect.Left, 0f);
+                g.TranslateTransform(-rect.Width * mag * 0.5f, 0f);
+                g.ScaleTransform(mag, 1f);
+                g.TranslateTransform(rect.Width * 0.5f, 0f);
+                g.TranslateTransform(-rect.Left, 0f);
+
+                RectangleF rect2 = rect;
+                rect2.Width = rect2.Width / mag;
+                g.DrawString(text, font, brush, rect2, format);
+
+                g.ResetTransform();
+            }
+            else
+            {
+                g.DrawString(text, font, brush, rect, format);
+            }
+        }
+
+        public static void DrawStringWithGraphicsPath(this Graphics g, string text, Font font, Brush brush, RectangleF rect, StringFormat format, bool allowNarrowSetWidth = false)
+        {
             var state = g.Save();
 
-            GraphicsPath gPath = new GraphicsPath();
-            SizeF stringSize = g.MeasureString(s, font);
-            float emSize = font.SizeInPoints * 96.0f / 72.0f;
-            gPath.AddString(s, font.FontFamily, (int)font.Style, emSize, bounds, format);
-            
-            RectangleF pathRect = gPath.GetBounds();
+            SizeF sz2 = g.MeasureString(text, font);
+            float width = sz2.Width;
 
-            float ratio = Math.Max((pathRect.Width / bounds.Width), (pathRect.Height / bounds.Height));
+            if (width > rect.Width && allowNarrowSetWidth)
+            {
+                float mag = rect.Width / width;
 
-            //g.DrawRectangle(Pens.Black, bounds);
-            g.TranslateTransform(-bounds.X, -bounds.Y);
-            g.ScaleTransform(ratio + 1, ratio + 1);
-            
-            g.FillPath(brush, gPath);
+                g.TranslateTransform(rect.Left, 0f);
+                g.TranslateTransform(-rect.Width * mag * 0.5f, 0f);
+                g.ScaleTransform(mag, 1f);
+                g.TranslateTransform(rect.Width * 0.5f, 0f);
+                g.TranslateTransform(-rect.Left, 0f);
+
+                rect.Width = rect.Width / mag;
+            }
+
+            float emSize = g.DpiY * font.Size / 72; // 다른의견 = font.Size + 4;
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddString(text, font.FontFamily, (int)font.Style, emSize, rect, format);
+
+            g.FillPath(brush, gp);
             g.Restore(state);
         }
+
     }
+
 }
