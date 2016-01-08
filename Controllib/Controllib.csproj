@@ -53,8 +53,12 @@
     <Compile Include="Controls\FlatTabRenderer.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\StepControl.cs" />
     <Compile Include="Controls\TabChangingEventArgs.cs" />
     <Compile Include="Controls\TitleBarControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UserButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\UserMenuStrip.cs">
@@ -85,6 +89,9 @@
     </Compile>
     <Compile Include="Graphic\ShapeRender.cs" />
     <Compile Include="Graphic\TextRender.cs" />
+    <Compile Include="Ladder.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -26,6 +26,11 @@ namespace Controllib.Graphic
             gp.Dispose();
         }
 
+        public static void FillRoundRect(this Graphics g, Brush brush, RectangleF bounds, float radius)
+        {
+            g.FillRoundRect(brush, bounds.X, bounds.Y, bounds.Width, bounds.Height, radius);
+        }
+
         public static GraphicsPath GetTopRoundRect(float x, float y, float width, float height, float radius)
         {
             GraphicsPath gp = new GraphicsPath();

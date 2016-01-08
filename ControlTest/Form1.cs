@@ -21,16 +21,7 @@ namespace ControlTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            UserTabRenderer renderer = new FlatTabRenderer();
-            userTabControl1.TabRenderer = renderer;
-
-            int value = addint(10, 20);
-            Console.WriteLine("10+20 = {0}", value);
+            
         }
-
-        [DllImport("Win32UnmanagedLib.dll")]
-        public static extern int addint(int n1, int n2);
-        [DllImport("Win32UnmanagedLib.dll")]
-        public static extern int addchar(string s1, string s2, StringBuilder sum);
     }
 }
