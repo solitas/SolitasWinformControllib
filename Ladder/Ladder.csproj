@@ -44,6 +44,7 @@
     <Compile Include="Ladder.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="LadderApperanceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
