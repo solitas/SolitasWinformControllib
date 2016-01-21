@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controllib.Controls;
+using Ladder;
 
 namespace ControlTest
 {
@@ -22,6 +23,27 @@ namespace ControlTest
         private void Form1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void listBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ElementType type = ElementType.NormalContact;
+
+            int selectedIndex = listBox1.SelectedIndex;
+            if (selectedIndex == 0)
+            {
+                type = ElementType.NormalContact;
+            }
+            else if (selectedIndex == 1)
+            {
+                type = ElementType.ClosedContact;
+            }
+            else if (selectedIndex == 2)
+            {
+                type = ElementType.Coil;
+            }
+
+            DoDragDrop(type, DragDropEffects.Move);
         }
     }
 }

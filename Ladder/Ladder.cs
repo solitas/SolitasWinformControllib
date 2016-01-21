@@ -79,24 +79,39 @@ namespace Ladder
             _numberOfLine = 10;
             _numberOfColumn = 10;
         }
-        
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             // [LineNumArea]|| <----ladderArea----> ||
             _editAreaWidth = Width - _lineNumAreaWidth - (2 * _railWidth);
             _editAreaHeight = _maxColumnHeight * _numberOfLine;
-        }
 
+            float x = _lineNumAreaWidth + _railWidth;
+            int y = 0;
+
+            float cellWidth = _editAreaWidth / _numberOfColumn;
+
+            for (; x <= Width -_railWidth; x +=cellWidth)
+            {
+                for (; y < Height; y += _maxColumnHeight)
+                {
+                    Point p = new Point((int)x, y);
+                    Cell cell = new Cell();
+                    cell.Position = p;
+                    cell.width = (int)cellWidth;
+                    cell.height = _maxColumnHeight;
+                }
+            }
+        }
         protected override void OnPaintBackground(PaintEventArgs pevent)
         {
             base.OnPaintBackground(pevent);
             using (Brush brush = new SolidBrush(AppearanceModel.BackColor))
             {
-                pevent.Graphics.FillRectangle(brush, ClientRectangle);
+                pevent.Graphics.FillRectangle(brush, Bounds);
             }
         }
-
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -112,9 +127,11 @@ namespace Ladder
         private void DrawLineNumberArea(Graphics g)
         {
             Rectangle rect = new Rectangle(0, 0, _lineNumAreaWidth, Height);
+            
             using (Brush backBrush = new SolidBrush(AppearanceModel.LineNumAreaBackColor))
+            using (Brush backBrush2 = new LinearGradientBrush(rect, AppearanceModel.LineNumAreaBackColorBegin, AppearanceModel.LineNumAreaBackColorEnd, 0.0f))
             {
-                g.FillRectangle(backBrush, rect);
+                g.FillRectangle(backBrush2, rect);
             }
         }
         private void DrawEditArea(Graphics g)
@@ -174,13 +191,78 @@ namespace Ladder
             g.Restore(state);
         }
 
-
         #region Code related to Mouse event
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
+            Point location = e.Location;
+            
+            
         }
         #endregion
 
+        #region Code related to Drag&Drop
+        protected override void OnDragEnter(DragEventArgs e)
+        {
+            // drag 중 화면 표시 변경
+            if (e.Data.GetDataPresent(typeof(ElementType)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="drgevent"></param>
+        protected override void OnDragDrop(DragEventArgs drgevent)
+        {
+            // element를 추가한다
+            ElementType? data = drgevent.Data.GetData(typeof(ElementType)) as ElementType?;
+
+            if (data == null)
+            {
+                return;
+            }
+
+            ElementType type = data.Value;
+            Point dragPosition = PointToClient(new Point(drgevent.X, drgevent.Y));
+            string text = string.Empty;
+            switch (type)
+            {
+                case ElementType.NormalContact: text = "normal"; break;
+                case ElementType.ClosedContact: text = "closed"; break;
+                case ElementType.Coil: text = "coil"; break;
+                default: text = "non select"; break;
+            }
+            MessageBox.Show(text);
+        }
+
+        #endregion
     }
+    
+    public struct Cell
+    {
+        public Point Position;
+        public Rectangle Bounds;
+        public int x;
+        public int y;
+        public int width;
+        public int height;
+        
+        public Cell(Point p, Rectangle rect, int x, int y, int width, int height)
+        {
+            this.Position = p;
+            this.Bounds = rect;
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+    }
+
+
 }

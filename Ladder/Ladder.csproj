@@ -41,11 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Element\Element.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ladder.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="LadderApperanceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeDefine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
