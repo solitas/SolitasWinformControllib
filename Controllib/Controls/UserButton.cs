@@ -28,6 +28,12 @@ namespace Controllib.Controls
 
         public UserButton()
         {
+            base.BackColor = Color.Transparent;
+            BackColor = Color.Black;
+            ForeColor = Color.White;
+            OuterBorderColor = Color.White;
+            InnerBorderColor = Color.Black;
+
             SetStyle(
                 ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.OptimizedDoubleBuffer |
@@ -220,7 +226,10 @@ namespace Controllib.Controls
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            base.OnPaint(pevent);
+            //base.OnPaint(pevent);
+            Graphics g = pevent.Graphics;
+            PaintButtonBackground(g, false, false, true);
+            DrawForegroundFromButton(pevent);
         }
 
         #region " Overrided Methods "
@@ -385,12 +394,212 @@ namespace Controllib.Controls
 
 
         #region Code related to Paint
+        private Button _imageButton;
+        private class TransparentControl : Control
+        {
+            protected override void OnPaintBackground(PaintEventArgs pevent) { }
+            protected override void OnPaint(PaintEventArgs e) { }
+        }
 
-        private void PaintButtonBackground(Graphics g)
+        private void DrawForegroundFromButton(PaintEventArgs pevent)
+        {
+            if (_imageButton == null)
+            {
+                _imageButton = new Button();
+                _imageButton.Parent = new TransparentControl();
+                _imageButton.SuspendLayout();
+                _imageButton.BackColor = Color.Transparent;
+                _imageButton.FlatAppearance.BorderSize = 0;
+                _imageButton.FlatStyle = FlatStyle.Flat;
+            }
+            else
+            {
+                _imageButton.SuspendLayout();
+            }
+            _imageButton.AutoEllipsis = AutoEllipsis;
+            if (Enabled)
+            {
+                _imageButton.ForeColor = ForeColor;
+            }
+            else
+            {
+                _imageButton.ForeColor = Color.FromArgb((3 * ForeColor.R + _backColor.R) >> 2,
+                    (3 * ForeColor.G + _backColor.G) >> 2,
+                    (3 * ForeColor.B + _backColor.B) >> 2);
+            }
+            _imageButton.Font = Font;
+            _imageButton.RightToLeft = RightToLeft;
+            _imageButton.Image = Image;
+            if (Image != null && !Enabled)
+            {
+                Size size = Image.Size;
+                float[][] newColorMatrix = new float[5][];
+                newColorMatrix[0] = new float[] { 0.2125f, 0.2125f, 0.2125f, 0f, 0f };
+                newColorMatrix[1] = new float[] { 0.2577f, 0.2577f, 0.2577f, 0f, 0f };
+                newColorMatrix[2] = new float[] { 0.0361f, 0.0361f, 0.0361f, 0f, 0f };
+                float[] arr = new float[5];
+                arr[3] = 1f;
+                newColorMatrix[3] = arr;
+                newColorMatrix[4] = new float[] { 0.38f, 0.38f, 0.38f, 0f, 1f };
+                System.Drawing.Imaging.ColorMatrix matrix = new System.Drawing.Imaging.ColorMatrix(newColorMatrix);
+                System.Drawing.Imaging.ImageAttributes disabledImageAttr = new System.Drawing.Imaging.ImageAttributes();
+                disabledImageAttr.ClearColorKey();
+                disabledImageAttr.SetColorMatrix(matrix);
+                _imageButton.Image = new Bitmap(Image.Width, Image.Height);
+                using (Graphics gr = Graphics.FromImage(_imageButton.Image))
+                {
+                    gr.DrawImage(Image, new Rectangle(0, 0, size.Width, size.Height), 0, 0, size.Width, size.Height, GraphicsUnit.Pixel, disabledImageAttr);
+                }
+            }
+            _imageButton.ImageAlign = ImageAlign;
+            _imageButton.ImageIndex = ImageIndex;
+            _imageButton.ImageKey = ImageKey;
+            _imageButton.ImageList = ImageList;
+            _imageButton.Padding = Padding;
+            _imageButton.Size = Size;
+            _imageButton.Text = Text;
+            _imageButton.TextAlign = TextAlign;
+            _imageButton.TextImageRelation = TextImageRelation;
+            _imageButton.UseCompatibleTextRendering = UseCompatibleTextRendering;
+            _imageButton.UseMnemonic = UseMnemonic;
+            _imageButton.ResumeLayout();
+            InvokePaint(_imageButton, pevent);
+            if (_imageButton.Image != null && _imageButton.Image != Image)
+            {
+                _imageButton.Image.Dispose();
+                _imageButton.Image = null;
+            }
+        }
+
+        private void PaintButtonBackground(Graphics g, bool pressed, bool hovered, bool enabled)
+        {
+            SmoothingMode smoothingMode = g.SmoothingMode;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            // white border;
+            Rectangle border = ClientRectangle;
+            border.Width--;
+            border.Height--;
+            using (GraphicsPath bw = CreateRoundRectangle(border, 4))
+            {
+                using (Pen p = new Pen(_outerBorderColor))
+                {
+                    g.DrawPath(p, bw);
+                }
+            }
+
+            border.X++;
+            border.Y++;
+            border.Width -= 2;
+            border.Height -= 2;
+            Rectangle rect2 = border;
+            rect2.Height >>= 1;
+
+            #region " content "
+            using (GraphicsPath bb = CreateRoundRectangle(border, 2))
+            {
+                int opacity = pressed ? 0xcc : 0x7f;
+                using (Brush br = new SolidBrush(Color.FromArgb(opacity, _backColor)))
+                {
+                    g.FillPath(br, bb);
+                }
+            }
+            #endregion
+            #region " shine "
+            if (rect2.Width > 0 && rect2.Height > 0)
+            {
+                rect2.Height++;
+                using (GraphicsPath bh = CreateTopRoundRectangle(rect2, 2))
+                {
+                    rect2.Height++;
+                    int opacity = 0x99;
+                    if (pressed | !enabled)
+                    {
+                        opacity = (int)(.4f * opacity + .5f);
+                    }
+                    using (LinearGradientBrush br = new LinearGradientBrush(rect2, Color.FromArgb(opacity, _shineColor), Color.FromArgb(opacity / 3, _shineColor), LinearGradientMode.Vertical))
+                    {
+                        g.FillPath(br, bh);
+                    }
+                }
+                rect2.Height -= 2;
+            }
+            #endregion
+        }
+
+
+        #endregion
+        private GraphicsPath CreateRoundRectangle(Rectangle rectangle, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int l = rectangle.Left;
+            int t = rectangle.Top;
+            int w = rectangle.Width;
+            int h = rectangle.Height;
+            int d = radius << 1;
+            path.AddArc(l, t, d, d, 180, 90); // topleft
+            path.AddLine(l + radius, t, l + w - radius, t); // top
+            path.AddArc(l + w - d, t, d, d, 270, 90); // topright
+            path.AddLine(l + w, t + radius, l + w, t + h - radius); // right
+            path.AddArc(l + w - d, t + h - d, d, d, 0, 90); // bottomright
+            path.AddLine(l + w - radius, t + h, l + radius, t + h); // bottom
+            path.AddArc(l, t + h - d, d, d, 90, 90); // bottomleft
+            path.AddLine(l, t + h - radius, l, t + radius); // left
+            path.CloseFigure();
+            return path;
+        }
+        private GraphicsPath CreateTopRoundRectangle(Rectangle rectangle, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int l = rectangle.Left;
+            int t = rectangle.Top;
+            int w = rectangle.Width;
+            int h = rectangle.Height;
+            int d = radius << 1;
+            path.AddArc(l, t, d, d, 180, 90); // topleft
+            path.AddLine(l + radius, t, l + w - radius, t); // top
+            path.AddArc(l + w - d, t, d, d, 270, 90); // topright
+            path.AddLine(l + w, t + radius, l + w, t + h); // right
+            path.AddLine(l + w, t + h, l, t + h); // bottom
+            path.AddLine(l, t + h, l, t + radius); // left
+            path.CloseFigure();
+            return path;
+        }
+
+        private GraphicsPath CreateBottomRadialPath(Rectangle rectangle)
+        {
+            GraphicsPath path = new GraphicsPath();
+            RectangleF rect = rectangle;
+            rect.X -= rect.Width * .35f;
+            rect.Y -= rect.Height * .15f;
+            rect.Width *= 1.7f;
+            rect.Height *= 2.3f;
+            path.AddEllipse(rect);
+            path.CloseFigure();
+            return path;
+        }
+    }
+
+    public interface IButtonState
+    {
+        void Paint(Graphics g);
+        void StateChange(IButtonState s);
+    }
+
+    public abstract class AbstractButtonState : IButtonState
+    {
+        public virtual void StateChange(IButtonState s)
         {
 
         }
 
-        #endregion
+        public void Paint(Graphics g)
+        {
+
+        }
+        protected abstract void DrawtBorder();
+
+        protected abstract void PaintBackground();
+        protected abstract void PaintContent();
     }
 }
