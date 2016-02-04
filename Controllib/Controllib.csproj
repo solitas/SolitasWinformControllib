@@ -53,6 +53,9 @@
     <Compile Include="Controls\FlatTabRenderer.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\MenuPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\StepControl.cs" />
     <Compile Include="Controls\TabChangingEventArgs.cs" />
     <Compile Include="Controls\TitleBarControl.cs">

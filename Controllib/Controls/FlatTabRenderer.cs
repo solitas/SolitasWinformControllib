@@ -25,15 +25,16 @@ namespace Controllib.Controls
         public override void DrawTab(Color foreColor, Color backColor, Color highlightColor, Color shadowColor, Color borderColor, bool active, bool mouseOver, DockStyle dock, Graphics graphics, SizeF tabSize)
         {
             RectangleF headerRect = new RectangleF(0, 0, tabSize.Width, tabSize.Height);
-
-            using (var path = ShapeRender.GetTopRoundRect(0, 0, tabSize.Width, tabSize.Height, 3f))
+            Rectangle header = new Rectangle(0, 0, (int)tabSize.Width, (int)tabSize.Height);
+            using (var path = ShapeRender.GetTopRoundRect(0, 0, tabSize.Width, tabSize.Height, 0.5f))
             {
                 if (active)
                 {
                     using (Brush brush = new SolidBrush(foreColor))
-                    using (Pen pen = new Pen(shadowColor))
+                    using (Pen pen = new Pen(shadowColor, 0.2f))
                     {
                         graphics.FillPath(brush, path);
+                        graphics.DrawRectangle(pen, header);
                     }
                 }
                 else

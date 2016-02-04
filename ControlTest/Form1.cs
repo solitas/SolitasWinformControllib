@@ -27,23 +27,7 @@ namespace ControlTest
 
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            ElementType type = ElementType.NormalContact;
-
-            int selectedIndex = listBox1.SelectedIndex;
-            if (selectedIndex == 0)
-            {
-                type = ElementType.NormalContact;
-            }
-            else if (selectedIndex == 1)
-            {
-                type = ElementType.ClosedContact;
-            }
-            else if (selectedIndex == 2)
-            {
-                type = ElementType.Coil;
-            }
-
-            DoDragDrop(type, DragDropEffects.Move);
+            
         }
     }
 }

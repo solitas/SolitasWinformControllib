@@ -30,7 +30,10 @@ namespace Controllib.Graphic
         {
             g.FillRoundRect(brush, bounds.X, bounds.Y, bounds.Width, bounds.Height, radius);
         }
-
+        public static void DrawRoundRect(this Graphics g, Pen pen, Rectangle rect, float radius)
+        {
+            DrawRoundRect(g, pen, rect.X, rect.Y, rect.Width, rect.Height, radius);
+        }
         public static GraphicsPath GetTopRoundRect(float x, float y, float width, float height, float radius)
         {
             GraphicsPath gp = new GraphicsPath();
